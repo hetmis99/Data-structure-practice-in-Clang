@@ -3,11 +3,11 @@
 
 void Hanoi(int num, char from, char by, char to) {
 	if (num == 1) {
-		printf("¿ø¹İ 1À» %c¿¡¼­ %c·Î ÀÌµ¿\n", from, to);
+		printf("ì›ë°˜ 1ì„ %cì—ì„œ %cë¡œ ì´ë™\n", from, to);
 	}
 	else {
 		Hanoi(num - 1, from, to, by);
-		printf("¿ø¹İ 1À» %c¿¡¼­ %c·Î ÀÌµ¿\n", from, to);
+		printf("ì›ë°˜ 1ì„ %cì—ì„œ %cë¡œ ì´ë™\n", from, to);
 		Hanoi(num - 1, by, from, to);
 	}
 }
