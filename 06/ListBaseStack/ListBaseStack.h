@@ -1,5 +1,5 @@
-#ifndef __AB_STACK_H__
-#define __AB_STACK_H__
+#ifndef __LB_STACK_H__
+#define __LB_STACK_H__
 
 #define TRUE 1
 #define FALSE 0
@@ -7,16 +7,19 @@
 
 typedef int Data;
 
-typedef struct _arrayStack_ {
-	Data stackArr[STACK_LEN];
-	int topindex;
-}ArrayStack;
+typedef struct _Node {
+	Data data;
+	struct _Node* next;
+}Node;
 
-typedef ArrayStack Stack;
+typedef struct _listStack_ {
+	Node *head;
+}ListStack;
+
+typedef ListStack Stack;
 
 void StackInit(Stack* pstack);
 int SIsEmpty(Stack* pstack);
-int SIsFull(Stack* pstack);
 
 void SPush(Stack* pstack, Data data);
 Data SPop(Stack* pstack);
