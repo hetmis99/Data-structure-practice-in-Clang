@@ -12,10 +12,17 @@ typedef struct _bTreeNode {
 BTreeNode* MakeBTreeNode();
 BTData GetData(BTreeNode* bt);
 void SetData(BTreeNode* bt, BTData data);
+typedef void (*VIsitFuncPtr)(BTData data);
 
 BTreeNode* GetLeftSubTree(BTreeNode* bt);
 BTreeNode* GetRightSubTree(BTreeNode* bt);
 
 void MakeLeftSubTree(BTreeNode* main, BTreeNode* sub);
 void MakeRightSubTree(BTreeNode* main, BTreeNode* sub);
+
+void InorderTraverse(BTreeNode* bt, VIsitFuncPtr action);
+void PostorderTraverse(BTreeNode* bt, VIsitFuncPtr action);
+void PreorderTraverse(BTreeNode* bt, VIsitFuncPtr action);
+void DeleteTree(BTreeNode* bt);
+
 #endif
