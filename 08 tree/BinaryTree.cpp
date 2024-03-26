@@ -1,9 +1,11 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "BinaryTree.h"
 
-BTreeNode* MakeBTreeNode(void) {
+BTreeNode* MakeBTreeNode() {
 	BTreeNode* newnode = (BTreeNode*)malloc(sizeof(BTreeNode));
-	newnode->left = newnode->right = NULL;
+	newnode->left = NULL;
+	newnode->right = NULL;
 	return newnode;
 }
 
@@ -23,16 +25,17 @@ BTreeNode* GetRightSubTree(BTreeNode* bt) {
 	return bt->right;
 }
 
-void MakeLeftSubTree(BTreeNode* main, BTreeNode* bt) {
-	if (main->left != NULL)
+void MakeLeftSubTree(BTreeNode* main, BTreeNode* sub) {
+	if (main->left != NULL) {
 		free(main->left);
-
-	main->left = bt;
+	}
+	main->left = sub;
 }
 
-void MakeRightSubTree(BTreeNode* main, BTreeNode* bt) {
-	if (main->right != NULL)
-		free(main->left);
+void MakeRightSubTree(BTreeNode* main, BTreeNode* sub) {
+	if (main->right != NULL) {
+		free(main->right);
+	}
 
-	main->right = bt;
+	main->right = sub;
 }

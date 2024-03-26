@@ -9,13 +9,13 @@ typedef struct _bTreeNode {
 	struct _bTreeNode* right;
 }BTreeNode;
 
-BTreeNode* MakeBTreeNode(void);
+BTreeNode* MakeBTreeNode();
 BTData GetData(BTreeNode* bt);
 void SetData(BTreeNode* bt, BTData data);
 
 BTreeNode* GetLeftSubTree(BTreeNode* bt);
 BTreeNode* GetRightSubTree(BTreeNode* bt);
 
-void MakeLeftSubTree(BTreeNode* main, BTreeNode* bt);
-void MakeRightSubTree(BTreeNode* main, BTreeNode* bt);
+void MakeLeftSubTree(BTreeNode* main, BTreeNode* sub);
+void MakeRightSubTree(BTreeNode* main, BTreeNode* sub);
 #endif
