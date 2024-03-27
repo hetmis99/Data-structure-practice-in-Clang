@@ -6,7 +6,7 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef int Data;
+typedef BTreeNode* Data;
 
 typedef struct _Node {
 	Data data;
